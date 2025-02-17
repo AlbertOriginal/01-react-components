@@ -4,7 +4,7 @@ function App() {
       <header>
         <h3>Result Unviversity</h3>
       </header>
-      <h1>Hello React!</h1>
+      <h1>Hello React</h1>
     </div>
   )
 }
