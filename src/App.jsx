@@ -1,14 +1,14 @@
 import Header from "./components/Header"
-import { ways } from "./data"
+import { ways, differences } from "./data"
+import { useState } from 'react'
 import WayToTeach from "./components/WayToTeach"
 import Button from "./components/Button/Button.jsx"
 
 function App() {
-  let content = 'Нажми на кнопку'
-
+  const [ contentType, setContentType ] = useState(null)
+  
   function handleClick( type ) {
-    console.log('button clicked', type)
-    content = type
+    setContentType(type)
   }
 
 
@@ -20,20 +20,31 @@ function App() {
           <h3>Наш подход к обучению</h3>
 
           <ul>
-            <WayToTeach {...ways[0]} />
+            {ways.map((way) => {
+            return <WayToTeach {...way} />
+            })}
+            {/* <WayToTeach {...ways[0]} />
             <WayToTeach {...ways[1]} />
             <WayToTeach {...ways[2]} />
             <WayToTeach {...ways[3]} />
+            <WayToTeach {...ways[4]} /> */}
           </ul>
         </section>
         <section>
           <h3>Чем мы отличаемся от других</h3>
 
-          <Button onClick={() => handleClick('way')}>Подход</Button>
-          <Button onClick={() => handleClick('easy')}>Доступность</Button>
-          <Button onClick={() => handleClick('program')}>Концентрация</Button>
+          <Button isActive={contentType == 'way'}
+           onClick={() => handleClick('way')}>Подход</Button>
+          <Button isActive={contentType == 'easy'}
+           onClick={() => handleClick('easy')}>Доступность</Button>
+          <Button isActive={contentType == 'program'}
+           onClick={() => handleClick('program')}>Концентрация</Button>
 
-          <p>{content}</p>
+          {contentType ? (
+            <p>{differences[contentType]}</p>
+          ) : (
+          <p>Нажми на кнопку</p>
+          )}
         </section>
       </main>
     </div>
