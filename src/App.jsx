@@ -1,6 +1,6 @@
 import Header from "./components/Header"
 import TeachingSection from "./components/TeachingSection"
-import differencesSection from "./components/differencesSection"
+import DifferencesSection from "./components/DifferencesSection.jsx"
 import IntroSection from "./components/IntroSection"
 
 export default function App() {
@@ -10,7 +10,7 @@ export default function App() {
       <main>
         <IntroSection />
         <TeachingSection />
-        <differencesSection />
+        <DifferencesSection />
       </main>
     </>
   )
