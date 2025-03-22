@@ -8,9 +8,7 @@ export default function App() {
     <>
       <Header />
       <main>
-        <IntroSection />
-        <TeachingSection />
-        <DifferencesSection />
+        
       </main>
     </>
   )
