@@ -1,8 +1,8 @@
 import Header from "./components/Header"
-import { ways, differences } from "./data"
+import { differences } from "./data"
 import { useState } from 'react'
-import WayToTeach from "./components/WayToTeach"
 import Button from "./components/Button/Button.jsx"
+import TeachingSection from "./components/TeachingSection.jsx"
 
 function App() {
   const [ contentType, setContentType ] = useState(null)
@@ -11,25 +11,11 @@ function App() {
     setContentType(type)
   }
 
-
   return (
     <div>
       <Header />
       <main>
-        <section>
-          <h3>Наш подход к обучению</h3>
-
-          <ul>
-            {ways.map((way) => {
-            return <WayToTeach {...way} />
-            })}
-            {/* <WayToTeach {...ways[0]} />
-            <WayToTeach {...ways[1]} />
-            <WayToTeach {...ways[2]} />
-            <WayToTeach {...ways[3]} />
-            <WayToTeach {...ways[4]} /> */}
-          </ul>
-        </section>
+        <TeachingSection />
         <section>
           <h3>Чем мы отличаемся от других</h3>
 
