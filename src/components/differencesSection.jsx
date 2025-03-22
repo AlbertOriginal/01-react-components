@@ -1,15 +1,16 @@
 import { differences } from "../data"
-import Button from "./components/Button/Button.jsx"
+import Button from "./Button/Button.jsx"
 import { useState } from 'react'
 
 export default function differencesSection () {
-  return(
-    <section>
-        const [ contentType, setContentType ] = useState(null)
-  
+  const [ contentType, setContentType ] = useState(null)
+
   function handleClick( type ) {
     setContentType(type)
   }
+
+  return(
+    <section>
 
         <h3>Чем мы отличаемся от других</h3>
 
